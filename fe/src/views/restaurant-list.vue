@@ -32,14 +32,37 @@
                     내부에는 제목을 표시할 v-card-title, 내용이 될 v-card-text, 기타 버튼등이 들어갈 v-card-actions로 나뉠 수 있음
                 -->
                 <v-card>
-                    <!-- -->
-                    <v-card-title>
-                        {{ restaurant.name }}
-                    </v-card-title>
+                    <!-- v-img로 이미지 표시 -->
+                    <v-img
+                        aspect-ratio="2"
+                        src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+                    >
+                    <v-container fill-height fluid>
+                        <v-layout fill-height>
+                            <v-flex xs12 align-end flexbox>
+                                <span class="headline white--text">{{ restaurant.name }}</span>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+                    </v-img>
                     <v-card-text>
                         {{ restaurant.type }}
                         주소 : {{ restaurant.address }}
                     </v-card-text>
+                    <!-- v-divider는 구획을 나눠주는 컴포넌트 -->
+                    <v-divider/>
+                    <v-card-actions>
+                        <!-- v-spacer는 여백을 만드는 컴포넌트(가로 길이 전체를 차지하기 때문에 다른 컴포넌트들을 한쪽으로 밀어줄 때 사용) -->
+                        <v-spacer/>
+                        <!-- 
+                            v-icon으로 아이콘 표시  px-2는 아이콘에 padding을 2만큼 주겠다는 의미 (2px는 아니고 vuetify 내부의 비율)
+                            p-2는 전체 패딩, px-2는 가로 패딩, py-2는 세로 패딩, pt는 위, pb는 아래, pr은 오른쪽, pl은 왼쪽
+                            m2로 마진도 줄 수 있음
+                        -->
+                        <v-icon small class="px-2">favorite</v-icon><span>0</span>
+                        <v-icon small class="px-2">comment</v-icon><span>0</span>
+                        <v-icon small class="px-2">visibility</v-icon><span>0</span>
+                    </v-card-actions>
                 </v-card>
             </v-flex>
         </v-layout>
