@@ -1,3 +1,6 @@
+/*
+  router.js는 어떤 주소에 어떤 컴포넌트를 렌더링할 지를 정의하는 파일
+*/
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
@@ -11,7 +14,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home // Home 컴포넌트를 명시했으므로 Home.vue를 렌더링
     },
     {
       path: '/about',
